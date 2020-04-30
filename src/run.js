@@ -118,8 +118,14 @@ async function runAll () {
   // success
   console.log()
   if (failed.length === 0) console.log(chalk.green.bold('-- all e2e tests ran successfully --'))
-  else console.log(chalk.red(`-- some test(s) failed: ${chalk.bold(failed.toString())} --`))
+  else {
+    console.log(chalk.red(`-- some test(s) failed: ${chalk.bold(failed.toString())} --`))
+    process.exit(1)
+  }
 }
 
 runAll()
-  .catch(e => console.error(e))
+  .catch(e => {
+    console.error(e)
+    process.exit(1)
+  })
