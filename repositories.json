@@ -1,4 +1,13 @@
 {
+  "aio-lib-analytics" : {
+    "repository": "https://github.com/adobe/aio-lib-analytics",
+    "branch": "master",
+    "requiredEnv": [ "ANALYTICS_COMPANY", "ANALYTICS_APIKEY", "ANALYTICS_TOKEN", "ANALYTICS_RSID"],
+    "requiredAuth": "oauth",
+    "mapEnv": { "OAUTH_CLIENTID": "ANALYTICS_APIKEY" , "OAUTH_TOKEN": "ANALYTICS_TOKEN" },
+    "doNotLog": [ "ANALYTICS_TOKEN" ]
+  },
+
   "aio-lib-target" : {
     "repository": "https://github.com/adobe/aio-lib-target",
     "branch": "master",
@@ -6,5 +15,15 @@
     "requiredAuth": "jwt",
     "mapEnv": { "JWT_CLIENTID": "TARGET_APIKEY" , "JWT_TOKEN": "TARGET_TOKEN" },
     "doNotLog": [ "TARGET_TOKEN" ]
+  },
+
+  "aio-lib-campaign-standard" : {
+    "repository": "https://github.com/adobe/aio-lib-campaign-standard",
+    "branch": "master",
+    "requiredEnv": [ "CAMPAIGN_STANDARD_TENANT_ID", "CAMPAIGN_STANDARD_API_KEY", "CAMPAIGN_STANDARD_ACCESS_TOKEN" ],
+    "requiredAuth": "jwt",
+    "mapEnv": { "JWT_CLIENTID": "CAMPAIGN_STANDARD_API_KEY", "JWT_TOKEN": "CAMPAIGN_STANDARD_ACCESS_TOKEN" },
+    "doNotLog": [ "CAMPAIGN_STANDARD_ACCESS_TOKEN" ]
   }
+
 }
