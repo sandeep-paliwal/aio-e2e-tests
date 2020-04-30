@@ -15,6 +15,7 @@ const chalk = require('chalk').default
 const repositories = require('../repositories.json')
 const fs = require('fs-extra')
 const auth = require('./auth')
+const path = require('path')
 
 const resDir = '.repos'
 
